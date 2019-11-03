@@ -67,3 +67,18 @@ h1 {
 .hole.up .mole {
     top: 0;
 }
+
+button {
+    display: block;
+    margin: 0 auto;
+    font-size: 3rem;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+}
+
+button:active {
+    transform: scale(1);
+}
