@@ -20,6 +20,10 @@ h1 {
     line-height: 1;
 }
 
+h2 {
+    font-size: 3rem;
+    text-align: center;
+}
 .score {
     background: rgba(255, 255, 255, 0.2);
     padding: 0 3rem;
@@ -29,7 +33,7 @@ h1 {
 
 .game {
     min-width: 600px;
-    height: 400px;
+    height: 600px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
