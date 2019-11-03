@@ -3,8 +3,9 @@
     const scoreBoard = document.querySelector('.score');
     const moles = document.querySelectorAll('.mole');
     let lastHole;
+    let timeUp;
 
-    const randTime = (min, max) => {
+    const randomTime = (min, max) => {
         return Math.random() * (max - min) + min;
     };
 
@@ -14,14 +15,23 @@
         const hole = holes[idx];
         if (hole === lastHole) {
             console.log('This is the same hole.');
-            randomHole(holes);
+            return randomHole(holes);
         }
 
         // Track the last hole that mole pops up
         lastHole = hole;
+        return hole;
     };
 
-    const body = document.querySelector('body');
-    body.addEventListener('click', randomHole);
+    const pop = () => {
+        const time = randomTime(200, 1000);
+        const hole = randomHole(holes);
+        hole.classList.add('up');
+        setTimeout(() => {
+            hole.classList.remove('up');
+            if (!timeUp) peep();
+        }, time);
+    };
+
 
 }());
