@@ -24,6 +24,7 @@
     };
 
     const pop = () => {
+        // Change the mole speed! Moles will show up between 200ms to 800ms
         const time = randomTime(200, 800);
         const hole = randomHole(holes);
         hole.classList.add('up');
@@ -37,6 +38,7 @@
         scoreBoard.textContent = 0;
         timeUp = false;
         pop();
+        // Game lasts 10000ms (10 seconds).
         setTimeout(() => timeUp = true, 10000);
     };
 
