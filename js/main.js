@@ -25,8 +25,8 @@
     };
 
     const pop = () => {
-        // Change the mole speed! Moles will show up between 300ms to 800ms
-        const time = randomTime(300, 800);
+        // Change the mole speed! Moles will show up between 350ms to 800ms
+        const time = randomTime(350, 800);
         const hole = randomHole(holes);
         hole.classList.add('up');
         setTimeout(() => {
