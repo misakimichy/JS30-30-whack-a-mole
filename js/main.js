@@ -2,7 +2,8 @@
     const holes = document.querySelectorAll('.hole');
     const scoreBoard = document.querySelector('.score');
     const moles = document.querySelectorAll('.mole');
-    const button = document.querySelector('button');
+    const startButton = document.querySelector('.start');
+    const refreshButton = document.querySelector('.refresh');
     let lastHole;
     let timeUp = false;
     let score = 0;
@@ -24,8 +25,8 @@
     };
 
     const pop = () => {
-        // Change the mole speed! Moles will show up between 200ms to 800ms
-        const time = randomTime(200, 800);
+        // Change the mole speed! Moles will show up between 300ms to 800ms
+        const time = randomTime(300, 800);
         const hole = randomHole(holes);
         hole.classList.add('up');
         setTimeout(() => {
@@ -36,6 +37,7 @@
 
     const startGame = () => {
         scoreBoard.textContent = 0;
+        score = 0;
         timeUp = false;
         pop();
         // Game lasts 10000ms (10 seconds).
@@ -47,8 +49,13 @@
         score++;
         e.currentTarget.classList.remove('up');
         scoreBoard.textContent = score;
-    }
+    };
+
+    const resetGame = () => {
+        scoreBoard.textContent = 0;
+    };
 
     moles.forEach(mole => mole.addEventListener('click', bonk));
-    button.addEventListener('click', startGame);
+    startButton.addEventListener('click', startGame);
+    refreshButton.addEventListener('click', resetGame);
 }());
